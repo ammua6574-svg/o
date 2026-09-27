@@ -1,34 +1,43 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Phone } from 'lucide-react'
-import Reveal from './Reveal'
+import { ArrowRight, Download } from 'lucide-react'
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 py-20 lg:py-24">
-      <div className="bg-grid-light pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="pointer-events-none absolute -top-32 -left-24 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-24 -bottom-32 h-96 w-96 rounded-full bg-navy-500/30 blur-3xl" aria-hidden="true" />
-
-      <div className="container-site relative text-center">
-        <Reveal>
-          <h2 className="mx-auto max-w-3xl font-heading text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to <span className="text-gradient-orange">Build Your Future?</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-navy-100/80 sm:text-lg">
-            Develop practical skills, gain confidence and prepare yourself for
-            a successful career with InfySkill.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Link to="/services" className="btn btn-primary px-8!">
-              Explore Training
-              <ArrowRight className="h-4.5 w-4.5" aria-hidden="true" />
-            </Link>
-            <Link to="/contact" className="btn btn-outline-white px-8!">
-              <Phone className="h-4.5 w-4.5" aria-hidden="true" />
-              Contact InfySkill
-            </Link>
+    <section className="py-20 relative overflow-hidden bg-[#0B1F3A]">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] to-[#F5821F]/20 opacity-90"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Upgrade Your Skills?
+            </h2>
+            <p className="text-lg text-gray-300 mb-8 max-w-lg">
+              Join thousands of students who are building their future with InfySkill.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="bg-white text-[#0B1F3A] px-8 py-3.5 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl">
+                Enquire Now
+              </Link>
+              <button className="bg-transparent border border-white text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition-colors flex items-center gap-2">
+                <Download size={20} /> Download Brochure
+              </button>
+            </div>
           </div>
-        </Reveal>
+          
+          <div className="relative">
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-2xl relative z-10 hidden md:block">
+               <img src="/images/computer_lab_lecture.jpg" alt="Student learning" className="rounded-2xl w-full h-auto" />
+            </div>
+            
+            {/* Annotation */}
+            <div className="absolute -top-10 right-0 z-20">
+              <p className="font-serif italic text-2xl text-white transform rotate-12 drop-shadow-md">
+                Your Future<br/>Starts Here!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
